@@ -1,29 +1,38 @@
 //if else solution
 
-function calc(operator, num1, num2){
-
-    if (num1 === undefined || num2 === undefined){
-      alert('Error');
+function Calc(operator, num1, num2){
+    
+  let result;
+  const isNotValid = (typeof num1 !== 'number' || typeof num2 !== 'number')
+    if (isNotValid){
+      result = 'Error';
     }
     else if (operator == '+'){
-        return num1+num2;
+        result = num1+num2;
     } 
     else if (operator == '-'){
-        return num1-num2;
+        result = num1-num2;
     } 
     else if (operator == '*'){
-        return num1*num2;
+        result = num1*num2;
     } 
-    else {
-      return num1/num2;
-    } 
+    else if (operator == '/'){
+      result = num1/num2;
+    } else {
+      result = 'Unknown operation';
+    }
+  return result;
     }
     
-    console.log(calc('/', 3, 4));
+    console.log(Calc('/', 9, 3));
 
-//switch solution
 
-    function calc(operator, num1, num2){
+//switch case solution
+
+
+function Calc(operator, num1, num2){
+  
+  let result;
 
     switch (operator){
   
@@ -32,16 +41,20 @@ function calc(operator, num1, num2){
 
         case '-':
             return num1-num2;
-        
+
         case '*':
             return num1*num2;
-    
+
         case '/':
             return num1/num2;
-    
-        case (num1 === undefined || num2 === undefined):
-                alert('Error');
-                
+
+        case (typeof num1 !== 'number' || typeof num !== 'number'):
+                return 'Error';
+      
+      default:
+        return 'Unknown operation';
+
     }
+    return result;
 }
-    console.log(calc('+', 3, 5));
+    console.log(Calc('/', 3, 5));
