@@ -1,60 +1,30 @@
-//if else solution
-
 function Calc(operator, num1, num2){
-    
-  let result;
-  const isNotValid = (typeof num1 !== 'number' || typeof num2 !== 'number')
-    if (isNotValid){
-      result = 'Error';
-    }
-    else if (operator == '+'){
+
+    let result;
+  
+    if (typeof num1 !== 'number' || typeof num2 !== 'number'){
+        result = 'Error';
+    }    
+    else if (operator === 'sum'){
         result = num1+num2;
     } 
-    else if (operator == '-'){
+    else if (operator === 'sub'){
         result = num1-num2;
-    } 
-    else if (operator == '*'){
-        result = num1*num2;
-    } 
-    else if (operator == '/'){
-      result = num1/num2;
-    } else {
+    }
+    else if (operator === 'multi'){
+        result = num1 * num2;
+    }
+    else if (operator === 'div'){
+        result = num1/num2;
+    }
+    else {
       result = 'Unknown operation';
     }
-  return result;
-    }
-    
-    console.log(Calc('/', 9, 3));
-
-
-//switch case solution
-
-
-function Calc(operator, num1, num2){
-  
-  let result;
-
-    switch (operator){
-  
-        case '+':
-            return num1+num2;
-
-        case '-':
-            return num1-num2;
-
-        case '*':
-            return num1*num2;
-
-        case '/':
-            return num1/num2;
-
-        case (typeof num1 !== 'number' || typeof num !== 'number'):
-                return 'Error';
-      
-      default:
-        return 'Unknown operation';
-
-    }
     return result;
-}
-    console.log(Calc('/', 3, 5));
+  }
+  
+  console.log(Calc('multi', 2, 5));
+  console.log(Calc('', 2, 5));
+  console.log(Calc('div', 2, 5));
+  console.log(Calc('sum', 2, 5));
+  console.log(Calc('sub', 2, 5));
