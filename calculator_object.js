@@ -1,23 +1,23 @@
-function Calc(operator, num1, num2){
+const operations = {
 
-  if (typeof num1 !== 'number' || typeof num2 !== 'number'){
-    return 'Error';
+  add: '+',
+  sub: '-',
+  multi: '*',
+};
+
+function calc(action, a, b) {
+
+  switch (action) {
+    case operations.add:
+      return a + b;
+    case operations.sub:
+      return a - b;
+    case operations.multi:
+      return a * b;
+
+  }
+
 }
-
-let operations = {
-  sum: num1+num2,
-  sub: num1-num2,
-  multi: num1*num2,
-  div: num1/num2,
-  '': 'Unknown operation',
-}
-
-return operations[operator];
-
-}
-console.log(Calc('multi', 2, 5));
-console.log(Calc('', 2, 5));
-console.log(Calc('div', 2, 5));
-console.log(Calc('sum', 2, 5));
-console.log(Calc('sub', 2, 5));
-console.log(Calc('div', "hi", 1));
+console.log(calc(operations.add, 5, 7));
+console.log(calc(operations.sub,5, 7));
+console.log(calc(operations.multi, 5, 7));
